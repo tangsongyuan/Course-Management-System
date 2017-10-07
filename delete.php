@@ -1,22 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Update</title>
-</head>
-<body>
+<?php include './partials/header.php';?>
 
-	<?php
-	    
-	    //Connect to the database
-	    $host = "127.0.0.1";
-	    $user = "tangsongyuan";                     //Your Cloud 9 username
-	    $pass = "";                                  //Remember, there is NO password by default!
-	    $db = "c9";                                  //Your database name you want to connect to
-	    $port = 3306;                                //The port #. It is always 3306
-	    
-	    $connection = mysqli_connect($host, $user, $pass, $db, $port)or die(mysql_error());
-	
-	?>
+
 	<a href="index.php">Go Back</a>
 	
 	<?php
@@ -51,5 +35,6 @@
 	        }
 	    }
 	?>
-</body>
-</html>
+
+
+<?php include './partials/footer.php';?>
