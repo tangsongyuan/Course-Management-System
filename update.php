@@ -63,10 +63,5 @@
 	    }
 	?>
 	
-	
-	<!--$query = "SELECT * FROM students WHERE id = $id1";-->
- <!--   $result = mysqli_query($connection, $query);-->
- <!--   while ($row = mysqli_fetch_assoc($result)) {-->
-	
 </body>
 </html>

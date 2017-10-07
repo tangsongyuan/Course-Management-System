@@ -29,10 +29,6 @@
 		} else if (preg_match("/[\D]/", $id1)) {
 			die ("Invalid ID! ID should be numerical.");
 		} else {
-			// echo var_dump($id1);
-			// $id1 = intval($id1);
-			// echo var_dump($id1);
-			// echo $id1;
 	?>
 	
 	<table>
@@ -51,8 +47,6 @@
 		    $result = mysqli_query($connection, $query);
 		    while ($row = mysqli_fetch_assoc($result)) {
 		?>
-		        <!-- echo "The ID is: " . $row['id'] . " and the Username is: " . $row['name'];-->
-		        <!-- echo "<br>";-->
 		        <tr>
 					<td><?php echo $row["id"]?></td>
 					<td><?php echo $row["name"]?></td>
@@ -78,17 +72,11 @@
 	} else if (preg_match("/[\D]/", $id2)) {
 		die ("Invalid ID! ID should be numerical.");
 	} else {
-		// echo var_dump($id1);
-		// $id1 = intval($id1);
-		// echo var_dump($id1);
-		// echo $id1;
 	?>
 	
 	<table>
 		<thead>
 			<tr>
-				<!--<td>record</td>-->
-				<!--<td>student ID</td>-->
 				<td>department</td>
 				<td>number</td>
 				<td>course</td>
@@ -100,11 +88,7 @@
 		    $result = mysqli_query($connection, $query);
 		    while ($row = mysqli_fetch_assoc($result)) {
 		?>
-		        <!-- echo "The ID is: " . $row['id'] . " and the Username is: " . $row['name'];-->
-		        <!-- echo "<br>";-->
 		        <tr>
-					<!--<td><?php echo $row["record"]?></td>-->
-					<!--<td><?php echo $row["std_id"]?></td>-->
 					<td><?php echo $row["department"]?></td>
 					<td><?php echo $row["number"]?></td>
 					<td><?php echo $row["course"]?></td>
