@@ -6,7 +6,7 @@
   <h3>Welcome to Course Selection System in Texas A&M University.</h3>
   <br>
   <p class="lead">
-    <a class="btn btn-primary btn-lg" href="#" role="button">Get started!</a>
+    <a class="btn btn-primary btn-lg" href="/index.php" role="button">Get started!</a>
   </p>
 </div>
 

@@ -30,7 +30,7 @@
 		              <span class="icon-bar"></span>
 		            </button>
 		
-		            <a class="navbar-brand" href="/homepage.php">CourseSelection</a>
+		            <a class="navbar-brand" href="/index.php">CourseSelection</a>
 		        </div>
 		        <div id="navbar" class="collapse navbar-collapse">
 		          <ul class="nav navbar-nav">
