@@ -1,8 +1,6 @@
 <?php include './partials/header.php';?>
 
-	
-	<h1>Retrieving Data from Database:</h1>
-	<br>
+
 	<br>
 
 

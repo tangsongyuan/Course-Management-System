@@ -152,14 +152,11 @@
 	
 	<h1 style="text-align: center">INSERT</h1>
 	<form Method = "Post" Action = "insert.php"">
-		<div>
-			To review personal information, please enter ID (1-500):
-		</div>
 		<div class="form-group">
-	        <input class="form-control" type="text" name="record" placeholder="Record">
+	        <input class="form-control" type="text" name="record" placeholder="Record No. e.g.20362">
 	    </div>
 	    <div class="form-group">
-	        <input class="form-control" type="text" name="std_id" placeholder="Student ID">
+	        <input class="form-control" type="text" name="std_id" placeholder="Student ID (1-500)">
 	    </div>
 	    <div class="form-group">
 		    <select class="form-control" name="department">
@@ -185,9 +182,6 @@
 	
 	<h1 style="text-align: center">DELETE</h1>
 	<form Method = "Post" Action = "delete.php">
-		<br>
-    		Warning: Your course record will be removed.
-    	<br>
 	    <div class="form-group">
 	        <input class="form-control" type="text" name="record" placeholder="Record">
 	    </div>

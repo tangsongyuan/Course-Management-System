@@ -10,6 +10,7 @@
 	        $query = "DELETE FROM courses WHERE record = $record";
 	        $result = mysqli_query($connection, $query);
 	        
+	        
 	        if ($result) {
 	            echo "Record " . $record . " has been successfully deleted.";
 	        } else {
@@ -27,12 +28,14 @@
 	        $result = mysqli_query($connection, $query);
 	        
 	        if ($result) {
-	            echo "Student ID " . $std_id . " has been successfully deleted.";
+	            echo "All courses for Student ID " . $std_id . " have been successfully deleted.";
 	        } else {
 	            echo "Error: " . $query . mysql_error();
 	        }
 	    }
 	?>
+	
+<br>
 <br>
 <a href="index.php">Go Back</a>
 
