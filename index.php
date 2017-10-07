@@ -117,8 +117,46 @@
     	<input type="text" name="age">
     	Email:
     	<input type="text" name="email">
-    	<input type="Submit" name="Update">
+    	<input type="Submit" value="Update">
     </form>
     <hr>
+    
+    
+    <form method="Post" action="insert.php">
+    	INSERT
+    	<br>
+    	Please Insert Course information.
+    	<br>
+    	Record Number:
+    	<input name="record" type="text">
+    	Student ID:
+    	<input type="text" name="std_id">
+    	Department:
+    	<select name="department">
+    		<option value="CSCE">CSCE</option>
+    		<option value="ECEN">ECEN</option>
+    	</select>
+    	Number:
+    	<input type="text" name="number">
+    	Course:
+    	<input type="text" name="course">
+    	<br>
+    	<input type="Submit" Value="Insert">
+    </form>
+    <hr>
+    
+    <form method="Post" action="delete.php">
+    	DELETE
+    	<br>
+    	Warning: Your course record will be removed.
+    	<br>
+    	Record Number:
+    	<input type="text" name="record">
+    	<input type="submit" value="Delete">
+    	<br>
+    	Student ID:
+    	<input type="text" name="std_id">
+    	<input type="Submit" value="Delete">
+    </form>
 	</body>
 </html>
