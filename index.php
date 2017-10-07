@@ -15,7 +15,7 @@
     	<h1 style="text-align: center">SELECT</h1>
 		<form Method = "Post" Action = "select.php"">
 			<div>
-				Review personal information, please enter Student ID:
+				Review personal information, please enter Student ID (1-500):
 			</div>
 			<div class="form-group">
 		        <input class="form-control" type="text" name="id1" placeholder="ID e.g. 234">
@@ -35,7 +35,7 @@
 		    </div>
 		    
 		    <div>
-		    	Look for all students in a course:
+		    	All registered students in a course:
 		    </div>
 		    <div class="form-group">
 		    	<select class="form-control" name="department">
@@ -74,10 +74,10 @@
 
 		<form Method = "Post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
 			<div>
-				Your old information:
+				Check old information:
 			</div>
 			<div class="form-group">
-		        <input class="form-control" type="text" name="name" value="<?php echo $temp; ?>" placeholder="ID">
+		        <input class="form-control" type="text" name="name" value="<?php echo $temp; ?>" placeholder="ID e.g. 59">
 		    </div>
 		    <div class="form-group">
 		        <button class="btn btn-md btn-primary btn-block">Submit</button>
@@ -94,6 +94,7 @@
             $result = mysqli_query($connection, $query);
             while ($row = mysqli_fetch_assoc($result)) {
     ?>
+    	<div>Information of Student ID: <?php $temp ?></div>
         <table class="table table-striped">
 			<thead>
 				<th></th>
@@ -121,7 +122,7 @@
     
 	<form Method = "Post" Action = "update.php"">
 		<div>
-			To review personal information, please enter ID (1-500):
+			Update personal Information, please enter new Student Information:
 		</div>
 		<div class="form-group">
 	        <input class="form-control" type="text" name="id" placeholder="ID">

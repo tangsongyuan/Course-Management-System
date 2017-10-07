@@ -17,7 +17,8 @@
 	    }
 	?>
 	
-	Your updated information:
+	<h3>Updated Information of <?php echo $name ?></h3>	
+	
 	<?php
 	    $query = "SELECT * FROM students WHERE id = $id";
 	    $result = mysqli_query($connection, $query);
