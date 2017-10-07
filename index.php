@@ -3,7 +3,7 @@
 <div class="jumbotron">
   <h1 class="display-3">Howdy!</h1>
   <hr class="my-4">
-  <h3>Welcome to Texas A&M University Course Selection System.</h3>
+  <h3>Welcome to Course Selection System in Texas A&M University.</h3>
   <br>
   <p class="lead">
     <a class="btn btn-primary btn-lg" href="#" role="button">Get started!</a>
@@ -15,20 +15,20 @@
     	<h1 style="text-align: center">SELECT</h1>
 		<form Method = "Post" Action = "select.php"">
 			<div>
-				To review personal information, please enter ID (1-500):
+				Review personal information, please enter Student ID:
 			</div>
 			<div class="form-group">
-		        <input class="form-control" type="text" name="id1" placeholder="ID">
+		        <input class="form-control" type="text" name="id1" placeholder="ID e.g. 234">
 		    </div>
 		    <div class="form-group">
 		        <button class="btn btn-md btn-primary btn-block">Submit</button>
 		    </div>
 			
 			<div>
-				To review one student's courses:
+				Review all courses of one student's, please enter Student ID:
 			</div>
 			<div class="form-group">
-		        <input class="form-control" type="text" name="id2" placeholder="ID">
+		        <input class="form-control" type="text" name="id2" placeholder="ID e.g. 34">
 		    </div>
 		    <div class="form-group">
 		        <button class="btn btn-md btn-primary btn-block">Select</button>
@@ -44,7 +44,7 @@
 				</select>
 		    </div>
 		    <div class="form-group">
-		        <input class="form-control" type="text" name="number" placeholder="Course">
+		        <input class="form-control" type="text" name="number" placeholder="Course Number e.g. 608">
 		    </div>
 		    <div class="form-group">
 		        <button class="btn btn-md btn-primary btn-block">Select</button>
@@ -94,22 +94,26 @@
             $result = mysqli_query($connection, $query);
             while ($row = mysqli_fetch_assoc($result)) {
     ?>
-        <table>
-            <thead>
+        <table class="table table-striped">
+			<thead>
+				<th></th>
                 <td>ID</td>
 				<td>Name</td>
 				<td>Gender</td>
 				<td>Age</td>
 				<td>Email</td>
-            </thead>
-            <tr>
-                <td><?php echo $row["id"] ?></td>
-                <td><?php echo $row["name"] ?></td>
-                <td><?php echo $row["gender"] ?></td>
-                <td><?php echo $row["age"] ?></td>
-                <td><?php echo $row["email"] ?></td>
-            </tr>
-        </table>
+		  	</thead>
+		  	<tbody>
+				<tr>
+					<th></th>
+                	<td><?php echo $row["id"] ?></td>
+                	<td><?php echo $row["name"] ?></td>
+                	<td><?php echo $row["gender"] ?></td>
+                	<td><?php echo $row["age"] ?></td>
+                	<td><?php echo $row["email"] ?></td>
+				</tr>
+			</tbody>
+		</table>
     <?php
             }
         }

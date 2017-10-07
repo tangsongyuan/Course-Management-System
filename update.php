@@ -1,6 +1,5 @@
 <?php include './partials/header.php';?>
 
-	<a href="index.php">Go Back</a>
 	
 	<?php
 	    $id = $_POST["id"];
@@ -24,9 +23,10 @@
 	    $result = mysqli_query($connection, $query);
 	    while ($row = mysqli_fetch_assoc($result)) {
 	?>
-	        <table>
+	        <table class="table table-striped">
         		<thead>
         			<tr>
+        				<th></th>
         				<td>ID</td>
         				<td>Name</td>
         				<td>Gender</td>
@@ -35,6 +35,7 @@
         			</tr>
         		</thead>
         		<tr>
+        			<th></th>
 					<td><?php echo $row["id"]?></td>
 					<td><?php echo $row["name"]?></td>
 					<td><?php echo $row["gender"]?></td>
@@ -45,5 +46,7 @@
     <?php
 	    }
 	?>
+	
+	<a href="index.php">Go Back</a>
 	
 <?php include './partials/footer.php';?>

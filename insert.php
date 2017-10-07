@@ -1,6 +1,5 @@
 <?php include './partials/header.php';?>
 
-	<a href="index.php">Go Back</a>
 	
 	<?php
 	    $record = $_POST["record"];
@@ -25,9 +24,10 @@
         }
 	?>
 	
-	<table>
+	<table class="table table-striped">
 	    <thead>
 	        <tr>
+	        	<th></th>
 	            <td>Record</td>
 	            <td>Student ID</td>
 	            <td>Department</td>
@@ -37,6 +37,7 @@
 	    </thead>
 	    <tbody>
 	        <tr>
+	        	<th></th>
 	            <td><?php echo $record ?></td>
 	            <td><?php echo $std_id ?></td>
 	            <td><?php echo $department ?></td>
@@ -45,5 +46,7 @@
 	        </tr>
 	    </tbody>
 	</table>
+	
+	<a href="index.php">Go Back</a>
 	
 <?php include './partials/footer.php';?>

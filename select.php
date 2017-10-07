@@ -1,8 +1,9 @@
 <?php include './partials/header.php';?>
 
-	<a href="index.php">Go Back</a>
 	
 	<h1>Retrieving Data from Database:</h1>
+	<br>
+	<br>
 
 
 	<?php 
@@ -14,23 +15,31 @@
 		} else {
 	?>
 	
-	<table>
+	<h3>Personal Information of Student ID: <?php echo $id1 ?></h3>	
+	
+    <table class="table table-striped">
 		<thead>
-			<tr>
-				<td>ID</td>
-				<td>Name</td>
-				<td>Gender</td>
-				<td>Age</td>
-				<td>Email</td>
-			</tr>
-		</thead>
+			<th></th>
+            <td>ID</td>
+			<td>Name</td>
+			<td>Gender</td>
+			<td>Age</td>
+			<td>Email</td>
+	  	</thead>
+	  	<tbody>
 		
 		<?php
 			$query = "SELECT * FROM students WHERE id = $id1";
-		    $result = mysqli_query($connection, $query);
+		    $result = mysqli_query($connection, $query)  or die(mysql_error());
+		    
+		    $num_rows = $result->num_rows;
+		    // echo $num_rows;
+		    
+		    if ($num_rows > 0) {
 		    while ($row = mysqli_fetch_assoc($result)) {
 		?>
 		        <tr>
+		        	<th></th>
 					<td><?php echo $row["id"]?></td>
 					<td><?php echo $row["name"]?></td>
 					<td><?php echo $row["gender"]?></td>
@@ -39,8 +48,21 @@
 				</tr>
 		<?php
 		    }
+		    } else {
+		?>
+		    	<tr>
+			    	<th></th>
+			    	<td><?php echo "0 result found." ?></td>
+			    	<td></td>
+			    	<td></td>
+			    	<td></td>
+			    	<td></td>
+		    	</tr>
+		<?php
+		    }
 		?>
 
+		</tbody>
 	</table>
 
 	<?php
@@ -57,9 +79,12 @@
 	} else {
 	?>
 	
-	<table>
+	<h3>Course Information of Student ID: <?php echo $id2 ?></h3>
+	
+	<table class="table table-striped">
 		<thead>
 			<tr>
+				<th></th>
 				<td>department</td>
 				<td>number</td>
 				<td>course</td>
@@ -69,13 +94,31 @@
 		<?php
 			$query = "SELECT * FROM courses WHERE std_id = $id2";
 		    $result = mysqli_query($connection, $query);
+		    
+		    $num_rows = $result->num_rows;
+		    // echo $num_rows;
+		    
+		    if ($num_rows > 0) {
 		    while ($row = mysqli_fetch_assoc($result)) {
 		?>
 		        <tr>
+		        	<th></th>
 					<td><?php echo $row["department"]?></td>
 					<td><?php echo $row["number"]?></td>
 					<td><?php echo $row["course"]?></td>
 				</tr>
+		<?php
+		    } 
+		    } else {
+		?>
+		    	<tr>
+			    	<th></th>
+			    	<td><?php echo "0 result found." ?></td>
+			    	<td></td>
+			    	<td></td>
+			    	<td></td>
+			    	<td></td>
+		    	</tr>
 		<?php
 		    }
 		?>
@@ -100,20 +143,30 @@
 			// $result = mysql_query($sql);
 			$result = mysqli_query($connection, $sql);
 	?>
-		<table>
+	
+		<h3>Students registered for <?php echo $department ?>  <?php echo $number?></h3>
+		
+		<table class="table table-striped">
 			<thead>
 				<tr>
-					<td>record</td>
-					<td>student ID</td>
-					<td>department</td>
-					<td>number</td>
-					<td>course</td>
+					<th></th>
+					<td>Record No.</td>
+					<td>Student ID</td>
+					<td>Department</td>
+					<td>Number</td>
+					<td>Course</td>
 				</tr>
 			</thead>
 	<?php
+	
+		$num_rows = $result->num_rows;
+	    // echo $num_rows;
+	    
+	    if ($num_rows > 0) {
 		while ($row = mysqli_fetch_assoc($result)) {
 	?>
 		<tr>
+			<th></th>
 			<td><?php echo $row["record"]?></td>
 			<td><?php echo $row["std_id"]?></td>
 			<td><?php echo $row["department"]?></td>
@@ -123,8 +176,23 @@
 	
 	<?php
 		}
+		} else {
+	?>
+	    	<tr>
+		    	<th></th>
+		    	<td><?php echo "0 result found." ?></td>
+		    	<td></td>
+		    	<td></td>
+		    	<td></td>
+		    	<td></td>
+	    	</tr>
+	<?php
+		}
 		}
 	?>
 		</table>
+		
+
+<a href="index.php">Go Back</a>
 
 <?php include './partials/footer.php';?>

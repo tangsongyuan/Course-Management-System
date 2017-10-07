@@ -30,11 +30,12 @@
 		              <span class="icon-bar"></span>
 		            </button>
 		
-		            <a class="navbar-brand" href="/">CourseSelection</a>
+		            <a class="navbar-brand" href="/homepage.php">CourseSelection</a>
 		        </div>
 		        <div id="navbar" class="collapse navbar-collapse">
 		          <ul class="nav navbar-nav">
-		            <li class="<%= typeof page !== 'undefined' && page === 'places' ? 'active' : '' %>"><a href="/places">Home</a></li>
+		          	<li class="active"><a href="/index.php">Home</a></li>
+		            <!--<li class="<%= typeof page !== 'undefined' && page === 'places' ? 'active' : '' %>"><a href="/index.php">Home</a></li>-->
 		          </ul>
 		        </div>
 		    </div>

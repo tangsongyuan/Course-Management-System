@@ -1,7 +1,5 @@
 <?php include './partials/header.php';?>
 
-
-	<a href="index.php">Go Back</a>
 	
 	<?php
 	    $record = $_POST["record"];
@@ -35,6 +33,7 @@
 	        }
 	    }
 	?>
-
+<br>
+<a href="index.php">Go Back</a>
 
 <?php include './partials/footer.php';?>
