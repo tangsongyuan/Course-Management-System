@@ -1,6 +1,5 @@
 <?php include './partials/header.php';?>
 
-
 	<br>
 
 
@@ -251,7 +250,7 @@
 
 		</tbody>
 	</table>
-	
+
 	<?php
 		}
 	?>
