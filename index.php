@@ -3,7 +3,7 @@
 <div class="jumbotron">
   <h1 class="display-3">Howdy!</h1>
   <hr class="my-4">
-  <h3>Welcome to Course Selection System in Texas A&M University.</h3>
+  <h3>Welcome to Course Management System in Texas A&M University.</h3>
   <br>
   <p class="lead">
     <a class="btn btn-primary btn-lg" href="/index.php" role="button">Get started!</a>
@@ -48,6 +48,16 @@
 		    </div>
 		    <div class="form-group">
 		        <button class="btn btn-md btn-primary btn-block">Select</button>
+		    </div>
+		    
+		    <div>
+		    	Review course information, please enter Course ID (1000-1049):
+		    </div>
+		    <div class="form-group">
+		        <input class="form-control" type="text" name="id3" placeholder="Course ID e.g. 1027">
+		    </div>
+		    <div class="form-group">
+		    	<button class="btn btn-md btn-primary btn-block">Select</button>
 		    </div>
 		</form>
 

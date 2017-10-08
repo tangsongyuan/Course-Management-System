@@ -142,7 +142,7 @@
 			$result = mysqli_query($connection, $sql);
 	?>
 	
-		<h3>Students registered for <?php echo $department ?>  <?php echo $number?></h3>
+	<h3>Students registered for <?php echo $department ?>  <?php echo $number?></h3>
 		
 		<table class="table table-striped">
 			<thead>
@@ -189,6 +189,72 @@
 		}
 	?>
 		</table>
+		
+		
+	<?php 
+		$id3 = $_POST["id3"];
+		if ("" == trim($id3)) {
+			# input is empty, leave blank
+		} else if (preg_match("/[\D]/", $id3)) {
+			die ("Invalid ID! ID should be numerical.");
+		} else {
+	?>
+	
+	<h3>Course Information of Course ID: <?php echo $id3 ?></h3>	
+	
+    <table class="table table-striped">
+		<thead>
+			<th></th>
+            <td>Course ID</td>
+			<td>Department</td>
+			<td>Number</td>
+			<td>Course</td>
+			<td>Credit</td>
+			<td>Prerequisite Course</td>
+	  	</thead>
+	  	<tbody>
+	  		
+	  	<?php
+			$query = "SELECT * FROM information WHERE info_id = $id3";
+		    $result = mysqli_query($connection, $query)  or die(mysql_error());
+		    
+		    $num_rows = $result->num_rows;
+		    // echo $num_rows;
+		    
+		    if ($num_rows > 0) {
+		    while ($row = mysqli_fetch_assoc($result)) {
+		?>
+		        <tr>
+		        	<th></th>
+					<td><?php echo $row["info_id"]?></td>
+					<td><?php echo $row["department"]?></td>
+					<td><?php echo $row["number"]?></td>
+					<td><?php echo $row["course"]?></td>
+					<td><?php echo $row["credit"]?></td>
+					<td><?php echo $row["preCourse"]?></td>
+				</tr>
+		<?php
+		    }
+		    } else {
+		?>
+		    	<tr>
+			    	<th></th>
+			    	<td><?php echo "0 result found." ?></td>
+			    	<td></td>
+			    	<td></td>
+			    	<td></td>
+			    	<td></td>
+		    	</tr>
+		<?php
+		    }
+		?>
+
+		</tbody>
+	</table>
+	
+	<?php
+		}
+	?>
 		
 
 <a href="index.php">Go Back</a>
