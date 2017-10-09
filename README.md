@@ -1,1 +1,1 @@
-# Course-Selection-System
+# Course-Management-System
